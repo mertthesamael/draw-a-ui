@@ -9,10 +9,7 @@ import "prismjs/themes/prism-tomorrow.css";
 export function PreviewModal({
   html,
   setHtml,
-}: {
-  html: string | null;
-  setHtml: (html: string | null) => void;
-}) {
+}){
   const [activeTab, setActiveTab] = useState<"preview" | "code">("preview");
 
   useEffect(() => {
@@ -92,11 +89,9 @@ export function PreviewModal({
   );
 }
 
-interface TabButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
-  active: boolean;
-}
 
-function TabButton({ active, ...buttonProps }: TabButtonProps) {
+
+function TabButton({ active, ...buttonProps }) {
   const className = active
     ? "px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-t-md focus:outline-none focus:ring"
     : "px-4 py-2 text-sm font-medium text-blue-500 bg-transparent hover:bg-blue-100 focus:bg-blue-100 rounded-t-md focus:outline-none focus:ring";
